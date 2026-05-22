@@ -33,6 +33,80 @@ export interface DocumentSummary {
   status: "processing" | "ready" | "failed";
   created_at: string;
   chunk_count: number;
+  matter_id?: string | null;
+  folder?: string;
+}
+
+export type MatterStepKey =
+  | "client_intake"
+  | "document_collection"
+  | "evidence_collection"
+  | "legal_research"
+  | "strategy_structure"
+  | "draft_creation"
+  | "internal_review"
+  | "client_review"
+  | "revision_negotiation"
+  | "final_approval"
+  | "execution_filing"
+  | "storage_monitoring";
+
+export type MatterDocumentFolder =
+  | "general"
+  | "intake"
+  | "evidence"
+  | "research"
+  | "draft"
+  | "executed";
+
+export interface Client {
+  id: string;
+  name: string;
+  company: string | null;
+  email: string | null;
+  phone: string | null;
+  notes: string | null;
+  status: string;
+  created_at: string;
+  updated_at: string;
+  matter_count: number;
+}
+
+export interface Matter {
+  id: string;
+  client_id: string;
+  title: string;
+  matter_type: string;
+  status: string;
+  current_step_key: MatterStepKey;
+  summary: string | null;
+  created_at: string;
+  updated_at: string;
+  client_name?: string | null;
+}
+
+export interface MatterStep {
+  id: string;
+  matter_id: string;
+  step_key: MatterStepKey;
+  label: string;
+  status: "pending" | "in_progress" | "completed";
+  assigned_role: string;
+  assigned_role_label: string;
+  content: Record<string, unknown>;
+  ai_log: string | null;
+  updated_at: string;
+}
+
+export interface MatterPhase {
+  key: string;
+  label: string;
+  steps: MatterStepKey[];
+}
+
+export interface MatterDetail extends Matter {
+  steps: MatterStep[];
+  phases: MatterPhase[];
 }
 
 export interface ChatThread {
@@ -87,6 +161,10 @@ export interface DashboardStats {
   chat_threads: number;
   workflow_runs: number;
   documents_processing: number;
+  clients_count: number;
+  active_matters: number;
+  demo_matter_id: string | null;
+  demo_client_id: string | null;
 }
 
 export const API_BASE =

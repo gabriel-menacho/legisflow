@@ -5,6 +5,7 @@ from sqlalchemy import select
 from app.auth import hash_password
 from app.database import SessionLocal
 from app.models import Firm, FirmMembership, User, UserRole
+from app.services.demo_seed import seed_demo_client_matter
 from app.services.workflows import seed_workflow_templates
 
 
@@ -36,6 +37,9 @@ def main() -> None:
             print(f"Created demo user: {email} / Demo123!")
         else:
             print(f"Demo user already exists: {email}")
+        cid, mid = seed_demo_client_matter(db)
+        if cid and mid:
+            print(f"Demo client/matter ready: client={cid[:8]}… matter={mid[:8]}…")
     finally:
         db.close()
 

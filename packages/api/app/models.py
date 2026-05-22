@@ -42,6 +42,31 @@ class WorkflowRunStatus(str, Enum):
     failed = "failed"
 
 
+class MatterStatus(str, Enum):
+    active = "active"
+    closed = "closed"
+
+
+class MatterStepStatus(str, Enum):
+    pending = "pending"
+    in_progress = "in_progress"
+    completed = "completed"
+
+
+class ClientStatus(str, Enum):
+    active = "active"
+    archived = "archived"
+
+
+class DocumentFolder(str, Enum):
+    general = "general"
+    intake = "intake"
+    evidence = "evidence"
+    research = "research"
+    draft = "draft"
+    executed = "executed"
+
+
 class User(Base):
     __tablename__ = "users"
 
@@ -70,6 +95,7 @@ class Firm(Base):
     documents: Mapped[list["Document"]] = relationship(back_populates="firm")
     threads: Mapped[list["ChatThread"]] = relationship(back_populates="firm")
     workflow_runs: Mapped[list["WorkflowRun"]] = relationship(back_populates="firm")
+    clients: Mapped[list["Client"]] = relationship(back_populates="firm")
 
 
 class FirmMembership(Base):
@@ -107,11 +133,74 @@ class Lead(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
 
 
+class Client(Base):
+    __tablename__ = "clients"
+
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=uuid_pk)
+    firm_id: Mapped[str] = mapped_column(ForeignKey("firms.id", ondelete="CASCADE"), index=True)
+    name: Mapped[str] = mapped_column(String(255))
+    company: Mapped[str | None] = mapped_column(String(255), nullable=True)
+    email: Mapped[str | None] = mapped_column(String(255), nullable=True)
+    phone: Mapped[str | None] = mapped_column(String(64), nullable=True)
+    notes: Mapped[str | None] = mapped_column(Text, nullable=True)
+    status: Mapped[str] = mapped_column(String(32), default=ClientStatus.active.value)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), server_default=func.now(), onupdate=func.now()
+    )
+
+    firm: Mapped["Firm"] = relationship(back_populates="clients")
+    matters: Mapped[list["Matter"]] = relationship(back_populates="client", cascade="all, delete-orphan")
+
+
+class Matter(Base):
+    __tablename__ = "matters"
+
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=uuid_pk)
+    firm_id: Mapped[str] = mapped_column(ForeignKey("firms.id", ondelete="CASCADE"), index=True)
+    client_id: Mapped[str] = mapped_column(ForeignKey("clients.id", ondelete="CASCADE"), index=True)
+    title: Mapped[str] = mapped_column(String(512))
+    matter_type: Mapped[str] = mapped_column(String(128), default="general")
+    status: Mapped[str] = mapped_column(String(32), default=MatterStatus.active.value)
+    current_step_key: Mapped[str] = mapped_column(String(64), default="client_intake")
+    summary: Mapped[str | None] = mapped_column(Text, nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), server_default=func.now(), onupdate=func.now()
+    )
+
+    client: Mapped["Client"] = relationship(back_populates="matters")
+    steps: Mapped[list["MatterStep"]] = relationship(back_populates="matter", cascade="all, delete-orphan")
+    documents: Mapped[list["Document"]] = relationship(back_populates="matter")
+
+
+class MatterStep(Base):
+    __tablename__ = "matter_steps"
+    __table_args__ = (UniqueConstraint("matter_id", "step_key", name="uq_matter_step_key"),)
+
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=uuid_pk)
+    matter_id: Mapped[str] = mapped_column(ForeignKey("matters.id", ondelete="CASCADE"), index=True)
+    step_key: Mapped[str] = mapped_column(String(64))
+    status: Mapped[str] = mapped_column(String(32), default=MatterStepStatus.pending.value)
+    assigned_role: Mapped[str] = mapped_column(String(64))
+    content: Mapped[dict] = mapped_column(JSON, default=dict)
+    ai_log: Mapped[str | None] = mapped_column(Text, nullable=True)
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), server_default=func.now(), onupdate=func.now()
+    )
+
+    matter: Mapped["Matter"] = relationship(back_populates="steps")
+
+
 class Document(Base):
     __tablename__ = "documents"
 
     id: Mapped[str] = mapped_column(String(36), primary_key=True, default=uuid_pk)
     firm_id: Mapped[str] = mapped_column(ForeignKey("firms.id", ondelete="CASCADE"), index=True)
+    matter_id: Mapped[str | None] = mapped_column(
+        ForeignKey("matters.id", ondelete="SET NULL"), nullable=True, index=True
+    )
+    folder: Mapped[str] = mapped_column(String(32), default=DocumentFolder.general.value)
     filename: Mapped[str] = mapped_column(String(512))
     storage_path: Mapped[str] = mapped_column(String(1024))
     status: Mapped[str] = mapped_column(String(32), default=DocumentStatus.processing.value)
@@ -119,6 +208,7 @@ class Document(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
 
     firm: Mapped["Firm"] = relationship(back_populates="documents")
+    matter: Mapped["Matter | None"] = relationship(back_populates="documents")
     chunks: Mapped[list["DocumentChunk"]] = relationship(back_populates="document", cascade="all, delete-orphan")
 
 

@@ -2,14 +2,14 @@ import shutil
 import uuid
 from pathlib import Path
 
-from fastapi import APIRouter, BackgroundTasks, Depends, File, HTTPException, UploadFile
+from fastapi import APIRouter, BackgroundTasks, Depends, File, Form, HTTPException, Query, UploadFile
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from app.auth import get_current_firm
 from app.config import get_settings
 from app.database import get_db
-from app.models import Document, Firm, FirmMembership, User
+from app.models import Document, DocumentFolder, Firm, FirmMembership, Matter, User
 from app.rag.ingest import document_chunk_count, ingest_document
 from app.schemas import DocumentOut
 
@@ -31,11 +31,18 @@ async def _process_document(document_id: str) -> None:
 
 @router.get("", response_model=list[DocumentOut])
 def list_documents(
+    matter_id: str | None = Query(None),
+    folder: str | None = Query(None),
     ctx: tuple[User, Firm, FirmMembership] = Depends(get_current_firm),
     db: Session = Depends(get_db),
 ):
     _, firm, _ = ctx
-    docs = db.scalars(select(Document).where(Document.firm_id == firm.id).order_by(Document.created_at.desc())).all()
+    q = select(Document).where(Document.firm_id == firm.id)
+    if matter_id:
+        q = q.where(Document.matter_id == matter_id)
+    if folder:
+        q = q.where(Document.folder == folder)
+    docs = db.scalars(q.order_by(Document.created_at.desc())).all()
     return [
         DocumentOut(
             id=d.id,
@@ -43,6 +50,8 @@ def list_documents(
             status=d.status,
             created_at=d.created_at,
             chunk_count=document_chunk_count(db, d.id),
+            matter_id=d.matter_id,
+            folder=d.folder,
         )
         for d in docs
     ]
@@ -52,10 +61,19 @@ def list_documents(
 async def upload_document(
     background_tasks: BackgroundTasks,
     file: UploadFile = File(...),
+    matter_id: str | None = Form(None),
+    folder: str = Form("general"),
     ctx: tuple[User, Firm, FirmMembership] = Depends(get_current_firm),
     db: Session = Depends(get_db),
 ):
     _, firm, _ = ctx
+    if matter_id:
+        matter = db.get(Matter, matter_id)
+        if not matter or matter.firm_id != firm.id:
+            raise HTTPException(404, "Matter not found")
+    valid_folders = {f.value for f in DocumentFolder}
+    if folder not in valid_folders:
+        folder = DocumentFolder.general.value
     if not file.filename:
         raise HTTPException(400, "Filename required")
     suffix = Path(file.filename).suffix.lower()
@@ -76,7 +94,13 @@ async def upload_document(
                 raise HTTPException(413, "File too large (max 25MB)")
             f.write(chunk)
 
-    doc = Document(firm_id=firm.id, filename=file.filename, storage_path=str(dest))
+    doc = Document(
+        firm_id=firm.id,
+        matter_id=matter_id,
+        folder=folder,
+        filename=file.filename,
+        storage_path=str(dest),
+    )
     db.add(doc)
     db.commit()
     db.refresh(doc)
@@ -87,6 +111,8 @@ async def upload_document(
         status=doc.status,
         created_at=doc.created_at,
         chunk_count=0,
+        matter_id=doc.matter_id,
+        folder=doc.folder,
     )
 
 

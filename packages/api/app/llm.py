@@ -11,30 +11,44 @@ def get_chat_model(settings: Settings | None = None) -> Model:
 
     if provider == "ollama":
         from pydantic_ai.models.openai import OpenAIModel
+        from pydantic_ai.providers.ollama import OllamaProvider
 
         return OpenAIModel(
             s.ollama_model,
-            base_url=f"{s.ollama_base_url.rstrip('/')}/v1",
-            api_key="ollama",
+            provider=OllamaProvider(
+                base_url=f"{s.ollama_base_url.rstrip('/')}/v1",
+                api_key="ollama",
+            ),
         )
 
     if provider == "openai":
         from pydantic_ai.models.openai import OpenAIModel
+        from pydantic_ai.providers.openai import OpenAIProvider
 
-        return OpenAIModel(s.openai_model, api_key=s.openai_api_key)
+        return OpenAIModel(
+            s.openai_model,
+            provider=OpenAIProvider(api_key=s.openai_api_key),
+        )
 
     if provider == "anthropic":
         from pydantic_ai.models.anthropic import AnthropicModel
+        from pydantic_ai.providers.anthropic import AnthropicProvider
 
-        return AnthropicModel(s.anthropic_model, api_key=s.anthropic_api_key)
+        return AnthropicModel(
+            s.anthropic_model,
+            provider=AnthropicProvider(api_key=s.anthropic_api_key),
+        )
 
     if provider == "openrouter":
         from pydantic_ai.models.openai import OpenAIModel
+        from pydantic_ai.providers.openai import OpenAIProvider
 
         return OpenAIModel(
             s.openrouter_model,
-            base_url="https://openrouter.ai/api/v1",
-            api_key=s.openrouter_api_key,
+            provider=OpenAIProvider(
+                base_url="https://openrouter.ai/api/v1",
+                api_key=s.openrouter_api_key,
+            ),
         )
 
     raise ValueError(f"Unknown LLM provider: {provider}")
