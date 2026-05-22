@@ -1,0 +1,510 @@
+{
+  "metadata": {
+    "title": "LegisFlow — Automatización IA para bufetes",
+    "description": "Automatización IA personalizada para bufetes. Reduce carga administrativa, automatiza intake, contratos y resúmenes de casos."
+  },
+  "common": {
+    "loading": "Cargando…",
+    "loadingPortal": "Cargando portal…",
+    "save": "Guardar",
+    "saving": "Guardando…",
+    "cancel": "Cancelar",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "remove": "Eliminar",
+    "add": "Añadir",
+    "back": "Volver",
+    "continue": "Continuar",
+    "submit": "Enviar",
+    "signOut": "Cerrar sesión",
+    "notAvailable": "—",
+    "error": "Error",
+    "success": "Éxito",
+    "brand": "LegisFlow",
+    "language": "Idioma",
+    "languageEs": "Español",
+    "languageEn": "English"
+  },
+  "a11y": {
+    "skipToContent": "Saltar al contenido principal",
+    "mainNav": "Navegación principal",
+    "portalNav": "Navegación del portal",
+    "mobileNav": "Seleccionar sección",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "workflowSteps": "Pasos del expediente",
+    "cookieDialog": "Preferencias de cookies",
+    "languageSelect": "Seleccionar idioma"
+  },
+  "nav": {
+    "dashboard": "Panel",
+    "clients": "Clientes",
+    "assistant": "Asistente",
+    "documents": "Documentos",
+    "workflows": "Flujos",
+    "settings": "Configuración",
+    "solutions": "Soluciones",
+    "useCases": "Casos de uso",
+    "process": "Proceso",
+    "metrics": "Métricas",
+    "signIn": "Iniciar sesión",
+    "consultNow": "Consultar ahora"
+  },
+  "cookies": {
+    "title": "Cookies y almacenamiento",
+    "description": "Usamos una cookie para recordar su idioma y otra para guardar su elección sobre cookies. Los tokens de sesión se almacenan en el navegador (localStorage) para el acceso al portal.",
+    "accept": "Aceptar",
+    "reject": "Rechazar",
+    "privacyLink": "Política de privacidad"
+  },
+  "auth": {
+    "signIn": "Iniciar sesión",
+    "signInSubtitle": "Acceda al portal de automatización de su bufete",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "signingIn": "Iniciando sesión…",
+    "invalidCredentials": "Credenciales no válidas",
+    "demoCredentials": "Usar credenciales demo",
+    "noAccount": "¿No tiene cuenta?",
+    "register": "Registrarse",
+    "createAccount": "Crear cuenta",
+    "fullName": "Nombre completo",
+    "workEmail": "Correo laboral",
+    "passwordMin": "Contraseña (mín. 8 caracteres)",
+    "creating": "Creando…",
+    "continueOnboarding": "Continuar al onboarding",
+    "registrationFailed": "Registro fallido. El correo puede existir ya.",
+    "alreadyHaveAccount": "¿Ya tiene cuenta?",
+    "forgotPassword": "Recuperar contraseña",
+    "forgotPasswordSubtitle": "Introduzca su correo y le enviaremos instrucciones (MVP: simulado).",
+    "sendReset": "Enviar enlace",
+    "sending": "Enviando…",
+    "resetSent": "Si existe la cuenta, recibirá instrucciones.",
+    "backToSignIn": "Volver a iniciar sesión"
+  },
+  "onboarding": {
+    "title": "Configurar bufete",
+    "subtitle": "Cuéntenos sobre su práctica para personalizar el portal.",
+    "firmName": "Nombre del bufete",
+    "firmSize": "Tamaño del bufete",
+    "practiceAreas": "Áreas de práctica (separadas por comas)",
+    "complete": "Completar configuración",
+    "completing": "Guardando…",
+    "failed": "No se pudo completar el onboarding",
+    "stepOf": "Paso {current} de {total}",
+    "yourFirm": "Su bufete",
+    "firmSizeLabel": "Tamaño del bufete",
+    "practiceAreasTitle": "Áreas de práctica",
+    "integrationsTitle": "Integraciones",
+    "launchPortal": "Abrir portal",
+    "saving": "Guardando…"
+  },
+  "portal": {
+    "dashboard": {
+      "title": "Panel",
+      "subtitle": "Expedientes, documentos y automatización de un vistazo.",
+      "clients": "Clientes",
+      "activeMatters": "Expedientes activos",
+      "documentsIndexed": "Documentos indexados",
+      "chatThreads": "Hilos de chat",
+      "quickStart": "Inicio rápido",
+      "openDemoMatter": "Abrir expediente demo",
+      "demoMatterDesc": "— Acuerdo CFO Riverside (flujo de 12 pasos)",
+      "addClient": "Añadir cliente",
+      "addClientDesc": "y empezar creación de documentos",
+      "uploadDocs": "Subir documentos del bufete",
+      "uploadDocsDesc": "para RAG en expedientes",
+      "askAssistant": "Preguntar al asistente",
+      "askAssistantDesc": "sobre material indexado"
+    },
+    "clients": {
+      "title": "Clientes",
+      "subtitle": "Carpetas de cliente — expedientes, documentos y resultados del flujo en un solo lugar.",
+      "newClient": "Nuevo cliente",
+      "empty": "Aún no hay clientes. Cree uno para iniciar un expediente.",
+      "matters": "{count, plural, one {# expediente} other {# expedientes}}",
+      "backToClients": "← Clientes",
+      "mattersTitle": "Expedientes",
+      "newMatter": "Nuevo expediente",
+      "noMatters": "Sin expedientes. Cree uno para iniciar el flujo de 12 pasos.",
+      "newClientTitle": "Nuevo cliente",
+      "name": "Nombre",
+      "company": "Empresa",
+      "email": "Correo",
+      "phone": "Teléfono",
+      "notes": "Notas",
+      "create": "Crear cliente",
+      "creating": "Creando…",
+      "created": "Cliente creado",
+      "createFailed": "Error al crear cliente",
+      "newMatterTitle": "Nuevo expediente",
+      "matterTitle": "Título del expediente",
+      "matterType": "Tipo (p. ej. employment_agreement)",
+      "summary": "Resumen opcional",
+      "createMatter": "Crear expediente",
+      "matterCreated": "Expediente creado",
+      "matterFailed": "Error al crear expediente",
+      "loadingClient": "Cargando cliente…",
+      "noMattersClient": "Este cliente aún no tiene expedientes.",
+      "step": "Paso"
+    },
+    "documents": {
+      "title": "Documentos",
+      "subtitle": "Suba PDF, DOCX o TXT para indexación RAG.",
+      "upload": "Subir archivo",
+      "uploading": "Subiendo…",
+      "empty": "Aún no hay documentos. Suba el primero de su bufete.",
+      "status": "Estado",
+      "chunks": "Fragmentos",
+      "uploaded": "Documento subido — indexación iniciada",
+      "uploadFailed": "Error al subir",
+      "loadFailed": "Error al cargar documentos",
+      "deleted": "Documento eliminado",
+      "deleteFailed": "Error al eliminar",
+      "delete": "Eliminar"
+    },
+    "assistant": {
+      "title": "Asistente",
+      "subtitle": "Pregunte sobre documentos indexados de su bufete.",
+      "newThread": "Nuevo hilo",
+      "placeholder": "Pregunte sobre los documentos de su bufete…",
+      "send": "Enviar",
+      "empty": "Cree un hilo para chatear con la base de conocimiento de su bufete.",
+      "thinking": "Pensando…",
+      "sendFailed": "Error al enviar. ¿Está Ollama en ejecución?",
+      "citations": "Citas"
+    },
+    "workflows": {
+      "title": "Flujos de trabajo",
+      "subtitle": "Plantillas de automatización para intake, contratos y expedientes.",
+      "empty": "No hay plantillas de flujo configuradas.",
+      "emptyRuns": "Aún no hay ejecuciones.",
+      "emptyTemplates": "No hay plantillas disponibles.",
+      "runs": "Ejecuciones recientes",
+      "runDetail": "Detalle de ejecución",
+      "status": "Estado",
+      "started": "Iniciado",
+      "template": "Plantilla",
+      "trigger": "Ejecutar",
+      "details": "Detalles",
+      "triggered": "Flujo ejecutado",
+      "triggerFailed": "Error al ejecutar",
+      "createMatterStart": "Crear expediente e iniciar intake",
+      "documentType": "Tipo de documento",
+      "backClient": "← Cliente",
+      "backWorkflows": "← Flujos de trabajo",
+      "loadingRun": "Cargando ejecución…",
+      "runTitle": "Ejecución {id}",
+      "summary": "Resumen",
+      "steps": "Pasos",
+      "slugLabel": "Identificador",
+      "runNow": "Ejecutar flujo ahora",
+      "webhookHint": "Webhook n8n: POST /api/v1/workflows/webhooks/n8n/{id} con cabecera X-Webhook-Secret",
+      "runIdShort": "ID {id}…",
+      "templates": {
+        "client-intake-automation": {
+          "name": "Automatización de intake de clientes",
+          "description": "Pipelines de intake sin intervención hacia su CMS."
+        },
+        "contract-drafting-pipeline": {
+          "name": "Pipeline de borradores de contratos",
+          "description": "Inyección paramétrica de plantillas vía LLM."
+        },
+        "case-summarization": {
+          "name": "Resumen de casos",
+          "description": "Ingesta de discovery, líneas temporales y mapas de entidades."
+        }
+      },
+      "templateSteps": {
+        "client-intake-automation": [
+          "Validar recepción",
+          "Estructurar datos del cliente",
+          "Enrutar al CMS"
+        ],
+        "contract-drafting-pipeline": [
+          "Analizar requisitos",
+          "Generar esquema del borrador",
+          "Control de calidad"
+        ],
+        "case-summarization": [
+          "Ingestar contexto del expediente",
+          "Resumir discovery",
+          "Construir línea temporal"
+        ]
+      },
+      "runStatuses": {
+        "pending": "Pendiente",
+        "running": "En ejecución",
+        "completed": "Completado",
+        "failed": "Fallido"
+      }
+    },
+    "settings": {
+      "title": "Configuración",
+      "profile": "Perfil",
+      "email": "Correo",
+      "name": "Nombre",
+      "role": "Rol",
+      "firm": "Bufete",
+      "size": "Tamaño",
+      "practiceAreas": "Áreas de práctica",
+      "language": "Idioma",
+      "languageHelp": "Preferencia guardada en una cookie. También puede usar ?locale=es o ?locale=en en la URL.",
+      "llmConfig": "Configuración LLM",
+      "llmReadOnly": "Solo lectura en MVP. Cambie mediante variables de entorno del servidor.",
+      "provider": "Proveedor",
+      "chatModel": "Modelo de chat",
+      "embedModel": "Modelo de embeddings",
+      "teamSettings": "Configuración del equipo →"
+    },
+    "team": {
+      "title": "Equipo",
+      "subtitle": "Gestión de miembros (MVP: solo vista).",
+      "comingSoon": "Invitaciones y roles próximamente."
+    },
+    "notFound": {
+      "title": "Página no encontrada",
+      "back": "Volver al inicio"
+    }
+  },
+  "matter": {
+    "phases": {
+      "intake": "Recepción",
+      "research_plan": "Investigación y plan",
+      "draft": "Borrador",
+      "review": "Revisión",
+      "close": "Cierre"
+    },
+    "matterTypes": {
+      "employment_contract": "Contrato laboral",
+      "nda": "Acuerdo de confidencialidad (NDA)",
+      "litigation_response": "Respuesta en litigio",
+      "corporate_agreement": "Acuerdo corporativo",
+      "policy": "Política / manual",
+      "general": "Documento legal general"
+    },
+    "roles": {
+      "client": "Cliente",
+      "junior_lawyer": "Abogado junior",
+      "senior_lawyer": "Abogado senior",
+      "paralegal": "Paralegal",
+      "compliance": "Equipo de cumplimiento",
+      "client_stakeholder": "Interesados del cliente"
+    },
+    "stepStatuses": {
+      "pending": "Pendiente",
+      "in_progress": "En curso",
+      "completed": "Completado"
+    },
+    "matterStatuses": {
+      "active": "Activo",
+      "closed": "Cerrado",
+      "on_hold": "En espera",
+      "draft": "Borrador"
+    },
+    "steps": {
+      "client_intake": "Recepción del cliente",
+      "document_collection": "Recopilación de documentos",
+      "evidence_collection": "Recopilación de pruebas",
+      "legal_research": "Investigación legal",
+      "strategy_structure": "Estrategia y estructura",
+      "draft_creation": "Creación del borrador",
+      "internal_review": "Revisión interna / QC",
+      "client_review": "Revisión del cliente",
+      "revision_negotiation": "Revisión y negociación",
+      "final_approval": "Aprobación legal final",
+      "execution_filing": "Ejecución / presentación",
+      "storage_monitoring": "Almacenamiento y seguimiento"
+    },
+    "status": "Estado",
+    "editingHint": "Editando — los cambios no se guardan hasta pulsar Guardar.",
+    "lastAiRun": "Última ejecución IA registrada.",
+    "markComplete": "Marcar paso completado",
+    "rerunAi": "Reejecutar IA",
+    "upload": "Subir",
+    "uploadTo": "Subir a carpeta {folder}",
+    "generating": "Generando…",
+    "noPanel": "Sin panel para este paso.",
+    "prev": "Anterior",
+    "next": "Siguiente",
+    "locked": "Complete el paso anterior para desbloquear.",
+    "loadFailed": "Error al cargar el expediente",
+    "saved": "Paso guardado",
+    "saveFailed": "Error al guardar",
+    "generated": "Paso generado con IA",
+    "generateFailed": "Error en la generación IA",
+    "uploaded": "Documento subido",
+    "uploadFailed": "Error al subir",
+    "backClient": "← Cliente",
+    "loadingWorkspace": "Cargando espacio de trabajo…",
+    "unsavedConfirm": "Hay cambios sin guardar. ¿Guardar antes de salir de este paso?",
+    "regenerated": "Paso regenerado con IA",
+    "generateFailedOllama": "Error en generación IA — ¿está Ollama en ejecución?",
+    "workflow": "Flujo de trabajo",
+    "stepOf": "Paso {current} de {total}",
+    "saveAndNext": "Guardar y siguiente",
+    "toolbar": {
+      "save": "Guardar",
+      "saving": "Guardando…",
+      "cancel": "Cancelar",
+      "edit": "Editar",
+      "markComplete": "Marcar paso completado",
+      "rerun": "Reejecutar paso IA",
+      "uploadFile": "Subir archivo"
+    },
+    "panels": {
+      "clientData": "Datos del cliente",
+      "documentsNeeded": "Documentos necesarios",
+      "problemObjectives": "Problema y objetivos",
+      "goals": "Objetivos",
+      "risks": "Riesgos",
+      "additionalNotes": "Notas adicionales",
+      "evidenceFiles": "Archivos de prueba",
+      "collectedDocuments": "Documentos recopilados",
+      "file": "Archivo",
+      "checklist": "Lista de verificación",
+      "verificationFlags": "Banderas de verificación",
+      "uploadedToMatter": "Subidos al expediente",
+      "clientFeedback": "Comentarios del cliente",
+      "noPanel": "Sin panel para este paso."
+    }
+  },
+  "marketing": {
+    "heroBadge": "system.initialize()",
+    "heroTitle": "Automatización IA personalizada para bufetes — reduzca carga administrativa un 40%",
+    "heroSubtitle": "Recupere horas facturables. Digitalice lo mundano.",
+    "heroBody": "Diseñamos pipelines de automatización seguros y a medida para intake de clientes, generación de contratos y resúmenes de casos con precisión clínica.",
+    "initiateConsultation": "Iniciar consulta",
+    "viewMetrics": "Ver métricas",
+    "heroImageAlt": "Retrato profesional de abogado",
+    "integrationsTitle": "Protocolos de integración establecidos",
+    "problemStatus": "Estado: crítico",
+    "problemTitle": "El cuello de botella legacy",
+    "problemItems": [
+      "Entrada manual de datos con errores sistémicos en expedientes.",
+      "Horas de abogados en borradores repetitivos.",
+      "Información en silos y comunicación fragmentada con clientes."
+    ],
+    "solutionStatus": "Estado: optimizado",
+    "solutionTitle": "El paradigma automatizado",
+    "solutionItems": [
+      "Pipelines de intake sin intervención hacia su CMS.",
+      "IA generativa para contratos estándar en segundos.",
+      "Flujo unificado con conciencia situacional total."
+    ],
+    "useCasesTag": "01 // despliegues",
+    "useCasesTitle": "Casos de uso principales",
+    "useCase1Title": "Automatización de intake",
+    "useCase1Desc": "Webhooks capturan consultas, estructuran datos no estructurados y alimentan matrices del CMS.",
+    "useCase2Title": "Generación de contratos",
+    "useCase2Desc": "Plantillas paramétricas vía LLM. NDAs, MSAs y escritos estándar desde entradas estructuradas.",
+    "useCase3Title": "Resumen de casos",
+    "useCase3Desc": "Ingesta de discovery. Líneas temporales y mapas entidad-relación.",
+    "processTag": "02 // metodología",
+    "processTitle": "Secuencia de ejecución",
+    "step1Title": "Auditoría",
+    "step1Desc": "Revisión de arquitectura.",
+    "step2Title": "Diseño",
+    "step2Desc": "Mapeo de lógica de flujos.",
+    "step3Title": "Construcción",
+    "step3Desc": "Ingeniería de scripts a medida.",
+    "step4Title": "Despliegue",
+    "step4Desc": "Integración segura y pruebas.",
+    "step5Title": "Soporte",
+    "step5Desc": "Optimización continua.",
+    "metricsTag": "03 // datos de rendimiento",
+    "metricsTitle": "Telemetría e impacto",
+    "metric1Title": "Bufete litigios mediano",
+    "metric1Focus": "Procesamiento de intake",
+    "metric1Before": "45 h/sem",
+    "metric1After": "4 h/sem",
+    "metric1BeforeDesc": "Entrada manual y triaje.",
+    "metric1AfterDesc": "Sincronización y enrutado automáticos.",
+    "metric2Title": "Asesoría corporativa",
+    "metric2Focus": "Borrador de contratos",
+    "metric2Before": "2,5 h",
+    "metric2After": "12 min",
+    "metric2BeforeDesc": "Por MSA estándar.",
+    "metric2AfterDesc": "Generación paramétrica.",
+    "legacy": "Legacy",
+    "ctaTitle": "Inicializar automatización",
+    "ctaBody": "Programe una sesión de diagnóstico segura para evaluar la arquitectura de su bufete e identificar objetivos de automatización.",
+    "ctaFooter": "Cifrado de extremo a extremo activo // Sin compromiso",
+    "leadName": "Nombre",
+    "leadEmail": "Correo",
+    "leadMessage": "Mensaje (opcional)",
+    "leadSubmit": "Enviar consulta",
+    "leadSending": "Enviando…",
+    "leadSuccess": "Consulta recibida. Le contactaremos pronto.",
+    "leadError": "No se pudo enviar. Inténtelo de nuevo.",
+    "footerRights": "© {year} LegisFlow. Todos los derechos reservados.",
+    "footerPrivacy": "Privacidad",
+    "footerTerms": "Términos",
+    "footerSecurity": "Seguridad",
+    "backHome": "← Volver al inicio",
+    "leadEmailPlaceholder": "Su correo laboral",
+    "leadConsult": "Reservar consulta",
+    "leadSuccessConsult": "Solicitud recibida. Le contactaremos pronto.",
+    "bookTitle": "Reservar consulta",
+    "bookSubtitle": "Cuéntenos su situación actual. Mapearemos objetivos de automatización para su bufete."
+  },
+  "legal": {
+    "privacy": {
+      "title": "Protocolo de privacidad",
+      "cookiesHeading": "Cookies y almacenamiento local",
+      "cookiesBody": "legisflow_locale guarda su idioma. legisflow_cookie_consent registra su elección sobre cookies. Los tokens de acceso al portal se guardan en localStorage del navegador, no en cookies de seguimiento. No usamos cookies de analítica en el MVP.",
+      "sections": {
+        "collection": {
+          "heading": "Recopilación de datos",
+          "body": "LegisFlow recopila información de cuenta, metadatos del bufete y documentos que sube para indexación RAG. Los formularios de marketing guardan correo y mensaje opcional."
+        },
+        "use": {
+          "heading": "Uso de datos",
+          "body": "Usamos sus datos solo para prestar servicios de automatización, mejorar el producto y responder consultas. No vendemos datos personales."
+        },
+        "retention": {
+          "heading": "Conservación",
+          "body": "Documentos e historial de chat permanecen hasta que los elimine o cierre su cuenta. Los leads se conservan para seguimiento comercial salvo solicitud de borrado."
+        },
+        "contact": {
+          "heading": "Contacto",
+          "body": "Para solicitudes de privacidad: privacy@legisflow.com. Texto legal de demostración para MVP."
+        }
+      }
+    },
+    "terms": {
+      "title": "Términos de servicio",
+      "sections": {
+        "agreement": {
+          "heading": "Acuerdo",
+          "body": "Al usar LegisFlow acepta estos términos. El servicio se proporciona como software de automatización para profesionales legales."
+        },
+        "usage": {
+          "heading": "Uso aceptable",
+          "body": "Usted es responsable del contenido subido y del cumplimiento normativo. No use el servicio para actividades ilícitas."
+        },
+        "liability": {
+          "heading": "Limitación de responsabilidad",
+          "body": "El MVP se ofrece sin garantías. La salida de IA requiere revisión humana profesional."
+        }
+      }
+    },
+    "security": {
+      "title": "Protocolo de seguridad",
+      "sections": {
+        "encryption": {
+          "heading": "Cifrado",
+          "body": "Tráfico TLS en tránsito. Tokens JWT para sesiones de API. Subidas almacenadas en volumen del despliegue."
+        },
+        "access": {
+          "heading": "Control de acceso",
+          "body": "Los datos están aislados por bufete (firm). Los roles controlan permisos dentro del equipo."
+        },
+        "audit": {
+          "heading": "Auditoría",
+          "body": "Registros de ejecución de flujos y pasos de expediente para trazabilidad operativa."
+        }
+      }
+    }
+  }
+}

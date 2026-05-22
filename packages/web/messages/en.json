@@ -1,0 +1,510 @@
+{
+  "metadata": {
+    "title": "LegisFlow — AI Automation for Law Firms",
+    "description": "Custom AI automation for law firms. Reduce admin workload, automate intake, contracts, and case summarization."
+  },
+  "common": {
+    "loading": "Loading…",
+    "loadingPortal": "Loading portal…",
+    "save": "Save",
+    "saving": "Saving…",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete",
+    "remove": "Remove",
+    "add": "Add",
+    "back": "Back",
+    "continue": "Continue",
+    "submit": "Submit",
+    "signOut": "Sign out",
+    "notAvailable": "—",
+    "error": "Error",
+    "success": "Success",
+    "brand": "LegisFlow",
+    "language": "Language",
+    "languageEs": "Español",
+    "languageEn": "English"
+  },
+  "a11y": {
+    "skipToContent": "Skip to main content",
+    "mainNav": "Main navigation",
+    "portalNav": "Portal navigation",
+    "mobileNav": "Select section",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "workflowSteps": "Matter workflow steps",
+    "cookieDialog": "Cookie preferences",
+    "languageSelect": "Select language"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "clients": "Clients",
+    "assistant": "Assistant",
+    "documents": "Documents",
+    "workflows": "Workflows",
+    "settings": "Settings",
+    "solutions": "Solutions",
+    "useCases": "Use Cases",
+    "process": "Process",
+    "metrics": "Metrics",
+    "signIn": "Sign in",
+    "consultNow": "Consult now"
+  },
+  "cookies": {
+    "title": "Cookies & storage",
+    "description": "We use a cookie to remember your language and another to store your cookie choice. Session tokens are stored in your browser (localStorage) for portal access.",
+    "accept": "Accept",
+    "reject": "Reject",
+    "privacyLink": "Privacy policy"
+  },
+  "auth": {
+    "signIn": "Sign in",
+    "signInSubtitle": "Access your firm automation portal",
+    "email": "Email",
+    "password": "Password",
+    "signingIn": "Signing in…",
+    "invalidCredentials": "Invalid credentials",
+    "demoCredentials": "Use demo credentials",
+    "noAccount": "No account?",
+    "register": "Register",
+    "createAccount": "Create account",
+    "fullName": "Full name",
+    "workEmail": "Work email",
+    "passwordMin": "Password (min 8 chars)",
+    "creating": "Creating…",
+    "continueOnboarding": "Continue to onboarding",
+    "registrationFailed": "Registration failed. Email may already exist.",
+    "alreadyHaveAccount": "Already have an account?",
+    "forgotPassword": "Forgot password",
+    "forgotPasswordSubtitle": "Enter your email and we will send instructions (MVP: simulated).",
+    "sendReset": "Send reset link",
+    "sending": "Sending…",
+    "resetSent": "If the account exists, you will receive instructions.",
+    "backToSignIn": "Back to sign in"
+  },
+  "onboarding": {
+    "title": "Set up your firm",
+    "subtitle": "Tell us about your practice to personalize the portal.",
+    "firmName": "Firm name",
+    "firmSize": "Firm size",
+    "practiceAreas": "Practice areas (comma-separated)",
+    "complete": "Complete setup",
+    "completing": "Saving…",
+    "failed": "Could not complete onboarding",
+    "stepOf": "Step {current} of {total}",
+    "yourFirm": "Your firm",
+    "firmSizeLabel": "Firm size",
+    "practiceAreasTitle": "Practice areas",
+    "integrationsTitle": "Integrations",
+    "launchPortal": "Launch portal",
+    "saving": "Saving…"
+  },
+  "portal": {
+    "dashboard": {
+      "title": "Dashboard",
+      "subtitle": "Firm matters, documents, and automation at a glance.",
+      "clients": "Clients",
+      "activeMatters": "Active matters",
+      "documentsIndexed": "Documents indexed",
+      "chatThreads": "Chat threads",
+      "quickStart": "Quick start",
+      "openDemoMatter": "Open demo matter",
+      "demoMatterDesc": "— Riverside CFO employment agreement (12-step workflow)",
+      "addClient": "Add a new client",
+      "addClientDesc": "and start document creation",
+      "uploadDocs": "Upload firm documents",
+      "uploadDocsDesc": "for RAG across matters",
+      "askAssistant": "Ask the assistant",
+      "askAssistantDesc": "about indexed material"
+    },
+    "clients": {
+      "title": "Clients",
+      "subtitle": "Client folders — matters, documents, and workflow outputs in one place.",
+      "newClient": "New client",
+      "empty": "No clients yet. Create one to start a matter.",
+      "matters": "{count, plural, one {# matter} other {# matters}}",
+      "backToClients": "← Clients",
+      "mattersTitle": "Matters",
+      "newMatter": "New matter",
+      "noMatters": "No matters yet. Create one to start the 12-step workflow.",
+      "newClientTitle": "New client",
+      "name": "Name",
+      "company": "Company",
+      "email": "Email",
+      "phone": "Phone",
+      "notes": "Notes",
+      "create": "Create client",
+      "creating": "Creating…",
+      "created": "Client created",
+      "createFailed": "Failed to create client",
+      "newMatterTitle": "New matter",
+      "matterTitle": "Matter title",
+      "matterType": "Type (e.g. employment_agreement)",
+      "summary": "Optional summary",
+      "createMatter": "Create matter",
+      "matterCreated": "Matter created",
+      "matterFailed": "Failed to create matter",
+      "loadingClient": "Loading client…",
+      "noMattersClient": "No matters for this client yet.",
+      "step": "Step"
+    },
+    "documents": {
+      "title": "Documents",
+      "subtitle": "Upload PDF, DOCX, or TXT for RAG indexing.",
+      "upload": "Upload file",
+      "uploading": "Uploading…",
+      "empty": "No documents yet. Upload your first firm document.",
+      "status": "Status",
+      "chunks": "Chunks",
+      "uploaded": "Document uploaded — indexing started",
+      "uploadFailed": "Upload failed",
+      "loadFailed": "Failed to load documents",
+      "deleted": "Document deleted",
+      "deleteFailed": "Delete failed",
+      "delete": "Delete"
+    },
+    "assistant": {
+      "title": "Assistant",
+      "subtitle": "Ask questions about your firm's indexed documents.",
+      "newThread": "New thread",
+      "placeholder": "Ask about your firm documents…",
+      "send": "Send",
+      "empty": "Create a thread to start chatting with your firm knowledge base.",
+      "thinking": "Thinking…",
+      "sendFailed": "Failed to send message. Is Ollama running?",
+      "citations": "Citations"
+    },
+    "workflows": {
+      "title": "Workflows",
+      "subtitle": "Automation templates for intake, contracts, and case work.",
+      "empty": "No workflow templates configured.",
+      "emptyRuns": "No runs yet.",
+      "emptyTemplates": "No templates available.",
+      "runs": "Recent runs",
+      "runDetail": "Run detail",
+      "status": "Status",
+      "started": "Started",
+      "template": "Template",
+      "trigger": "Trigger",
+      "details": "Details",
+      "triggered": "Workflow triggered",
+      "triggerFailed": "Trigger failed",
+      "createMatterStart": "Create matter & start intake",
+      "documentType": "Document type",
+      "backClient": "← Client",
+      "backWorkflows": "← Workflows",
+      "loadingRun": "Loading run…",
+      "runTitle": "Run {id}",
+      "summary": "Summary",
+      "steps": "Steps",
+      "slugLabel": "Slug",
+      "runNow": "Run workflow now",
+      "webhookHint": "n8n webhook: POST /api/v1/workflows/webhooks/n8n/{id} with header X-Webhook-Secret",
+      "runIdShort": "ID {id}…",
+      "templates": {
+        "client-intake-automation": {
+          "name": "Client Intake Automation",
+          "description": "Zero-touch intake pipelines mapping to your CMS."
+        },
+        "contract-drafting-pipeline": {
+          "name": "Contract Drafting Pipeline",
+          "description": "Parametric template injection via LLMs."
+        },
+        "case-summarization": {
+          "name": "Case Summarization",
+          "description": "Discovery ingest, timelines, and entity mapping."
+        }
+      },
+      "templateSteps": {
+        "client-intake-automation": [
+          "Validate intake",
+          "Structure client data",
+          "Route to CMS"
+        ],
+        "contract-drafting-pipeline": [
+          "Parse requirements",
+          "Generate draft outline",
+          "Quality check"
+        ],
+        "case-summarization": [
+          "Ingest matter context",
+          "Summarize discovery",
+          "Build timeline"
+        ]
+      },
+      "runStatuses": {
+        "pending": "Pending",
+        "running": "Running",
+        "completed": "Completed",
+        "failed": "Failed"
+      }
+    },
+    "settings": {
+      "title": "Settings",
+      "profile": "Profile",
+      "email": "Email",
+      "name": "Name",
+      "role": "Role",
+      "firm": "Firm",
+      "size": "Size",
+      "practiceAreas": "Practice areas",
+      "language": "Language",
+      "languageHelp": "Preference saved in a cookie. You can also use ?locale=es or ?locale=en in the URL.",
+      "llmConfig": "LLM configuration",
+      "llmReadOnly": "Read-only in MVP. Change via server environment variables.",
+      "provider": "Provider",
+      "chatModel": "Chat model",
+      "embedModel": "Embed model",
+      "teamSettings": "Team settings →"
+    },
+    "team": {
+      "title": "Team",
+      "subtitle": "Member management (MVP: view only).",
+      "comingSoon": "Invites and roles coming soon."
+    },
+    "notFound": {
+      "title": "Page not found",
+      "back": "Back to home"
+    }
+  },
+  "matter": {
+    "phases": {
+      "intake": "Intake",
+      "research_plan": "Research & Plan",
+      "draft": "Draft",
+      "review": "Review",
+      "close": "Close"
+    },
+    "matterTypes": {
+      "employment_contract": "Employment contract",
+      "nda": "Non-disclosure agreement (NDA)",
+      "litigation_response": "Litigation response",
+      "corporate_agreement": "Corporate agreement",
+      "policy": "Policy / handbook",
+      "general": "General legal document"
+    },
+    "roles": {
+      "client": "Client",
+      "junior_lawyer": "Junior Lawyer",
+      "senior_lawyer": "Senior Lawyer",
+      "paralegal": "Paralegal",
+      "compliance": "Compliance Team",
+      "client_stakeholder": "Client Stakeholders"
+    },
+    "stepStatuses": {
+      "pending": "Pending",
+      "in_progress": "In progress",
+      "completed": "Completed"
+    },
+    "matterStatuses": {
+      "active": "Active",
+      "closed": "Closed",
+      "on_hold": "On hold",
+      "draft": "Draft"
+    },
+    "steps": {
+      "client_intake": "Client Intake",
+      "document_collection": "Document Collection",
+      "evidence_collection": "Evidence Collection",
+      "legal_research": "Legal Research",
+      "strategy_structure": "Strategy & Structure",
+      "draft_creation": "Draft Creation",
+      "internal_review": "Internal Review / QC",
+      "client_review": "Client Review",
+      "revision_negotiation": "Revision & Negotiation",
+      "final_approval": "Final Legal Approval",
+      "execution_filing": "Execution / Filing",
+      "storage_monitoring": "Storage & Monitoring"
+    },
+    "status": "Status",
+    "editingHint": "Editing — changes are not saved until you click Save.",
+    "lastAiRun": "Last AI run recorded.",
+    "markComplete": "Mark step complete",
+    "rerunAi": "Re-run AI",
+    "upload": "Upload",
+    "uploadTo": "Upload to {folder} folder",
+    "generating": "Generating…",
+    "noPanel": "No panel for this step.",
+    "prev": "Previous",
+    "next": "Next",
+    "locked": "Complete the previous step to unlock.",
+    "loadFailed": "Failed to load matter",
+    "saved": "Step saved",
+    "saveFailed": "Failed to save",
+    "generated": "Step generated with AI",
+    "generateFailed": "AI generation failed",
+    "uploaded": "Document uploaded",
+    "uploadFailed": "Upload failed",
+    "backClient": "← Client",
+    "loadingWorkspace": "Loading matter workspace…",
+    "unsavedConfirm": "You have unsaved changes. Save before leaving this step?",
+    "regenerated": "Step regenerated with AI",
+    "generateFailedOllama": "AI generation failed — is Ollama running?",
+    "workflow": "Workflow",
+    "stepOf": "Step {current} of {total}",
+    "saveAndNext": "Save & Next",
+    "toolbar": {
+      "save": "Save",
+      "saving": "Saving…",
+      "cancel": "Cancel",
+      "edit": "Edit",
+      "markComplete": "Mark step complete",
+      "rerun": "Re-run AI step",
+      "uploadFile": "Upload file"
+    },
+    "panels": {
+      "clientData": "Client data",
+      "documentsNeeded": "Documents needed",
+      "problemObjectives": "Problem & objectives",
+      "goals": "Goals",
+      "risks": "Risks",
+      "additionalNotes": "Additional notes",
+      "evidenceFiles": "Evidence files",
+      "collectedDocuments": "Collected documents",
+      "file": "File",
+      "checklist": "Checklist",
+      "verificationFlags": "Verification flags",
+      "uploadedToMatter": "Uploaded to matter",
+      "clientFeedback": "Client feedback",
+      "noPanel": "No panel for this step."
+    }
+  },
+  "marketing": {
+    "heroBadge": "system.initialize()",
+    "heroTitle": "Custom AI automation for law firms—reduce admin workload by 40%",
+    "heroSubtitle": "Reclaim billable hours. Digitize the mundane.",
+    "heroBody": "We engineer secure, bespoke automation pipelines that handle client intake, contract generation, and case summarization with clinical precision.",
+    "initiateConsultation": "Initiate consultation",
+    "viewMetrics": "View metrics",
+    "heroImageAlt": "Professional attorney portrait",
+    "integrationsTitle": "Integration protocols established",
+    "problemStatus": "Status: critical",
+    "problemTitle": "The legacy bottleneck",
+    "problemItems": [
+      "Manual data entry creating systemic errors across case files.",
+      "Valuable attorney hours burned on repetitive drafting.",
+      "Siloed information leading to fragmented client communication."
+    ],
+    "solutionStatus": "Status: optimized",
+    "solutionTitle": "The automated paradigm",
+    "solutionItems": [
+      "Zero-touch intake pipelines mapping directly to your CMS.",
+      "Generative AI drafting standard contracts in seconds.",
+      "Unified data stream ensuring total situational awareness."
+    ],
+    "useCasesTag": "01 // deployments",
+    "useCasesTitle": "Core use cases",
+    "useCase1Title": "Intake Automation",
+    "useCase1Desc": "Webhooks intercept client queries, structure unstructured data, and populate CMS matrices autonomously.",
+    "useCase2Title": "Contract Generation",
+    "useCase2Desc": "Parametric template injection via LLMs. Draft NDAs, MSAs, and standard filings from structured inputs.",
+    "useCase3Title": "Case Summarization",
+    "useCase3Desc": "Ingest discovery documents. Output chronological timelines and entity-relationship mapping.",
+    "processTag": "02 // methodology",
+    "processTitle": "Execution sequence",
+    "step1Title": "Audit",
+    "step1Desc": "System architecture review.",
+    "step2Title": "Design",
+    "step2Desc": "Workflow logic mapping.",
+    "step3Title": "Build",
+    "step3Desc": "Custom script engineering.",
+    "step4Title": "Deploy",
+    "step4Desc": "Secure integration & testing.",
+    "step5Title": "Support",
+    "step5Desc": "Continuous optimization.",
+    "metricsTag": "03 // performance data",
+    "metricsTitle": "Telemetry & impact",
+    "metric1Title": "Mid-size litigation firm",
+    "metric1Focus": "Intake processing",
+    "metric1Before": "45 hrs/wk",
+    "metric1After": "4 hrs/wk",
+    "metric1BeforeDesc": "Manual data entry & triage.",
+    "metric1AfterDesc": "Automated sync & routing.",
+    "metric2Title": "Corporate counsel",
+    "metric2Focus": "Contract drafting",
+    "metric2Before": "2.5 hrs",
+    "metric2After": "12 min",
+    "metric2BeforeDesc": "Per standard MSA creation.",
+    "metric2AfterDesc": "Parametric generation.",
+    "legacy": "Legacy",
+    "ctaTitle": "Initialize automation",
+    "ctaBody": "Schedule a secure diagnostic session to evaluate your firm architecture and identify high-yield automation targets.",
+    "ctaFooter": "End-to-end encryption active // No commitment required",
+    "leadName": "Name",
+    "leadEmail": "Email",
+    "leadMessage": "Message (optional)",
+    "leadSubmit": "Submit inquiry",
+    "leadSending": "Sending…",
+    "leadSuccess": "Inquiry received. We will contact you soon.",
+    "leadError": "Could not send. Please try again.",
+    "footerRights": "© {year} LegisFlow. All rights reserved.",
+    "footerPrivacy": "Privacy",
+    "footerTerms": "Terms",
+    "footerSecurity": "Security",
+    "backHome": "← Back to home",
+    "leadEmailPlaceholder": "Your work email",
+    "leadConsult": "Book consultation",
+    "leadSuccessConsult": "Consultation request received. We'll be in touch.",
+    "bookTitle": "Book a consultation",
+    "bookSubtitle": "Tell us where you are today. We will map automation targets for your firm."
+  },
+  "legal": {
+    "privacy": {
+      "title": "Privacy Protocol",
+      "cookiesHeading": "Cookies & local storage",
+      "cookiesBody": "legisflow_locale stores your language. legisflow_cookie_consent records your cookie choice. Portal access tokens are stored in browser localStorage, not tracking cookies. We do not use analytics cookies in the MVP.",
+      "sections": {
+        "collection": {
+          "heading": "Data collection",
+          "body": "LegisFlow collects account information, firm metadata, and documents you upload for RAG indexing. Marketing form submissions store email and optional message content."
+        },
+        "use": {
+          "heading": "Use of data",
+          "body": "We use your data solely to provide automation services, improve product quality, and respond to consultation requests. We do not sell personal data."
+        },
+        "retention": {
+          "heading": "Retention",
+          "body": "Documents and chat history remain until you delete them or close your account. Lead data is retained for sales follow-up unless you request deletion."
+        },
+        "contact": {
+          "heading": "Contact",
+          "body": "For privacy requests, contact privacy@legisflow.com. This is placeholder legal copy for MVP demo purposes."
+        }
+      }
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "sections": {
+        "agreement": {
+          "heading": "Agreement",
+          "body": "By using LegisFlow you agree to these terms. The service is provided as automation software for legal professionals."
+        },
+        "usage": {
+          "heading": "Acceptable use",
+          "body": "You are responsible for uploaded content and regulatory compliance. Do not use the service for unlawful activities."
+        },
+        "liability": {
+          "heading": "Limitation of liability",
+          "body": "The MVP is provided without warranties. AI output requires professional human review."
+        }
+      }
+    },
+    "security": {
+      "title": "Security Protocol",
+      "sections": {
+        "encryption": {
+          "heading": "Encryption",
+          "body": "TLS in transit. JWT tokens for API sessions. Uploads stored on deployment volume."
+        },
+        "access": {
+          "heading": "Access control",
+          "body": "Data is isolated per firm. Roles control permissions within the team."
+        },
+        "audit": {
+          "heading": "Audit",
+          "body": "Workflow run logs and matter step records for operational traceability."
+        }
+      }
+    }
+  }
+}
