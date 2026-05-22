@@ -10,6 +10,10 @@ Legal-tech SaaS monorepo: marketing site, firm portal, AI assistant (RAG), and w
 - **LLM (default):** Ollama (`llama3.2` + `nomic-embed-text`) — free/local
 - **Database:** PostgreSQL 16 + pgvector
 
+## Frontend-only demo (no backend)
+
+For a standalone UI walkthrough with mocked API data, see [packages/web/DEMO.md](packages/web/DEMO.md) on branch `feat/frontend-mock-demo`.
+
 ## Quick start (Docker)
 
 ```bash

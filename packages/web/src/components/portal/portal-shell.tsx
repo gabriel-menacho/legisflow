@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useEffect } from "react";
 import { useAuth } from "@/components/providers/auth-provider";
+import { isMockApi } from "@/lib/api";
 import { LanguageSwitcher } from "@/components/ui/language-switcher";
 import { Icon } from "@/components/ui/icon";
 
@@ -92,6 +93,14 @@ export function PortalShell({ children }: { children: React.ReactNode }) {
           </select>
         </header>
         <main id="main-content" className="flex-1 overflow-auto p-6 md:p-8">
+          {isMockApi && (
+            <p
+              className="mb-4 rounded border border-primary-container/40 bg-surface-container px-3 py-2 text-center text-xs text-on-surface-variant"
+              role="status"
+            >
+              Demo mode — all data is simulated locally (no backend).
+            </p>
+          )}
           {children}
         </main>
       </div>
