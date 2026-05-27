@@ -8,7 +8,7 @@ import {
   useEffect,
   useState,
 } from "react";
-import { api, clearTokens, getTokens, setTokens } from "@/lib/api";
+import { api, clearTokens, getTokens, isMockApi, setTokens } from "@/lib/api";
 
 type AuthContextValue = {
   user: AuthMeResponse | null;
@@ -43,6 +43,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   useEffect(() => {
+    if (
+      isMockApi &&
+      process.env.NEXT_PUBLIC_MOCK_AUTO_LOGIN === "true" &&
+      !getTokens().access
+    ) {
+      setTokens("mock-access", "mock-refresh");
+    }
     refresh();
   }, [refresh]);
 
